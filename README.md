@@ -20,7 +20,39 @@ The aim of the project is to help create variations of base color and to fully e
 
 ## Usage
 
-Import the library in your code
+You can run test and see the test.html file produced in the 'test' folder.
+
+    $ npm test
+
+Import the library in your code and you can do basic transformations
+
+```js
+const Cs = require('colorsmith')
+
+var color = '#f07746'
+var c = Cs.hex2surfCcc( color ) // Convert to surface CCC
+var hexCode = Cs.surfCcc2hex( c ) // Convert back
+hexCode == color // true
+
+```
+
+Recommended way, extract the CCC components and reconstruct the hex code with modified CCC components. The following example produces a yellow-green color with same complexion and coloration as the original color:
+```js
+var [ chroma, complexion, coloration ] = Cs.hex2surfCcc( color )
+hexCode = Cs.surfCcc2hex( [ 1/6, complexion, coloration ] )
+hexCode == color // false, we changed chroma to yellow-green tint
+```
+
+If you want to do it traditional way, the following functions produce a yellow-green color with same brightness and saturation as the original color (instead of complexion and coloration):
+
+```js
+var [ chroma, complexion, coloration ] = Cs.hex2ccc( color )
+hexCode = Cs.ccc2hex( [ 1/6, complexion, coloration ] )
+hexCode == color // false, we changed chroma to yellow-green tint
+```
+
+
+Here is the complete program that produces an output similar to the image above.
 
 ```js
 
