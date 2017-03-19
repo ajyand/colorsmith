@@ -8,7 +8,7 @@ Colorsmith
 
 The aim of the project is to help create variations of base color and to fully exploit CCC model.
 
-  <img src="test/output.png"/>
+  <img src="https://raw.githubusercontent.com/ajyand/colorsmith/master/test/output.png"/>
 
 ## Installation
 
