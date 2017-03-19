@@ -83,3 +83,5 @@ console.log( '*** NOTE: Don\'t forget to manually inspect test.html' )
 
 [npm-badge-url]: https://www.npmjs.com/package/colorsmith
 [license-badge-url]: ./LICENSE
+[npm-badge]: https://img.shields.io/npm/v/colorsmith.svg
+[license-badge]: https://img.shields.io/npm/l/colorsmith.svg
