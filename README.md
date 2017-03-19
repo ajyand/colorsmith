@@ -8,6 +8,7 @@ Colorsmith
 
 The aim of the project is to help create variations of base color and to fully exploit CCC model.
 
+  <img src="test/output.png"/>
 
 ## Installation
 
@@ -73,7 +74,6 @@ console.log( '*** NOTE: Don\'t forget to manually inspect test.html' )
 
 
 ```
-  <img src="test/output.png"/>
 
 ### Change log ###
 
