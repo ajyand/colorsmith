@@ -8,6 +8,14 @@ Colorsmith
 
 The aim of the project is to help create variations of base color and to fully exploit CCC model.
 
+<b>Chroma</b>: If the chroma of red is 0, green is 1/3 and blue is 2/3 then the chroma for yellow is 1/6.
+
+<b>Complexion</b>: The color code for yellow is #ffff00 which means it is twice brighter than red, #ff0000 or green #00ff00 alone.
+
+<b>Surface complexion</b>: Even though yellow's color code is #ffff00 and red is only #ff0000, both have same surface complexion in the sense that they represent brightest color in their own directions as they lie on the surface of the color cube.
+
+<b>Coloration</b>: It is analogous the the amount of color pigments. If diminished, the color is reduced to a shade of grey.
+
   <img src="https://raw.githubusercontent.com/ajyand/colorsmith/master/test/output.png"/>
 
 ## Installation
@@ -36,14 +44,14 @@ hexCode == color // true
 
 ```
 
-Recommended way, extract the CCC components and reconstruct the hex code with modified CCC components. The following example produces a yellow-green color with same complexion and coloration as the original color:
+Recommended way, extract the CCC components and reconstruct the hex code with modified CCC components. The following example produces a yellow-green color with same surface complexion and coloration as the original color:
 ```js
 var [ chroma, complexion, coloration ] = Cs.hex2surfCcc( color )
 hexCode = Cs.surfCcc2hex( [ 1/6, complexion, coloration ] )
 hexCode == color // false, we changed chroma to yellow-green tint
 ```
 
-If you want to do it traditional way, the following functions produce a yellow-green color with same brightness and saturation as the original color (instead of complexion and coloration):
+If you do not want to use surface complexion, the following functions produce a yellow-green color with same complexion and coloration as the original color but the complexion is not automatically adjusted according to the color:
 
 ```js
 var [ chroma, complexion, coloration ] = Cs.hex2ccc( color )
