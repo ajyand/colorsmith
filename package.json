@@ -1,0 +1,31 @@
+{
+  "name": "colorsmith",
+  "version": "1.0.0",
+  "description": "Create colors based on intuitive Chroma, Complexion and Coloration model.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajyand/colorsmith.git"
+  },
+  "keywords": [
+    "color",
+    "crete",
+    "generate",
+    "chroma",
+    "complexion",
+    "coloration"
+  ],
+  "author": "Ajay Anand <ajyand@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ajyand/colorsmith/issues"
+  },
+  "homepage": "https://github.com/ajyand/colorsmith#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
