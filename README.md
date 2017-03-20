@@ -44,21 +44,43 @@ hexCode == color // true
 
 ```
 
-Recommended way, extract the CCC components and reconstruct the hex code with modified CCC components. The following example produces a yellow-green color with same surface complexion and coloration as the original color:
+Alternatively, you can extract the CCC components and reconstruct the hex code with modified CCC components. The following example produces a yellow color with same surface complexion and coloration as the original color:
 ```js
 var [ chroma, complexion, coloration ] = Cs.hex2surfCcc( color )
 hexCode = Cs.surfCcc2hex( [ 1/6, complexion, coloration ] )
-hexCode == color // false, we changed chroma to yellow-green tint
+hexCode == color // false, we changed chroma to yellow tint
 ```
 
-If you do not want to use surface complexion, the following functions produce a yellow-green color with same complexion and coloration as the original color but the complexion is not automatically adjusted according to the color:
+If you do not want to use surface complexion, the following functions produce a yellow color with same complexion and coloration as the original color but the complexion is not automatically adjusted according to the color:
 
 ```js
 var [ chroma, complexion, coloration ] = Cs.hex2ccc( color )
 hexCode = Cs.ccc2hex( [ 1/6, complexion, coloration ] )
-hexCode == color // false, we changed chroma to yellow-green tint
+hexCode == color // false, we changed chroma to yellow tint
 ```
 
+Here's the summary of all available functions:
+
+```js
+[ chroma, complexion, coloration ] = Cs.hex2ccc( '#e48c15' )
+hexCode = Cs.ccc2hex( [ chroma, complexion, coloration ] )
+
+[ chroma, complexion, coloration ] = Cs.rgb2ccc( [ red, green, blue ] )
+[ red, green, blue ] = Cs.ccc2rgb( [ chroma, complexion, coloration ] )
+
+[ chroma, surfComplexion, coloration ] = Cs.hex2surfCcc( '#e48c15' )
+hexCode = Cs.surfCcc2hex( [ chroma, surfComplexion, coloration ] )
+
+[ chroma, surfComplexion, coloration ] = Cs.rgb2surfCcc( [ red, green, blue ] )
+[ red, green, blue ] = Cs.surfCcc2rgb( [ chroma, surfComplexion, coloration ] )
+
+hexCode = Cs.rgb2hex( [ red, green, blue ] )
+[ red, green, blue ] = Cs.hex2rgb( '#e48c15' )
+
+surfComplexion = Cs.toSurfaceComplexion( chroma, complexion )
+complexion = Cs.fromSurfaceComplexion( chroma, surfComplexion )
+
+```
 
 Here is the complete program that produces an output similar to the image above.
 

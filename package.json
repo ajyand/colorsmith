@@ -1,9 +1,10 @@
 {
   "name": "colorsmith",
-  "version": "1.0.5",
+  "version": "1.0.8",
   "description": "Create colors based on intuitive Chroma, Complexion and Coloration model.",
   "main": "index.js",
   "scripts": {
+    "build": "uglifyjs src/colorsmith.js -c -m > index.js",
     "test": "mocha"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "homepage": "https://github.com/ajyand/colorsmith#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "uglifyjs": "^2.4.10"
   }
 }
