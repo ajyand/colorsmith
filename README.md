@@ -57,7 +57,7 @@ hexCode == color // false, we changed chroma to yellow tint
 
 Here's the summary of all available functions:
 
-<b>NOTE: All values are in the range [0,1], that is 0 &lt;= x &lt;= 1.</b>
+<b>NOTE: All values are in the range [0,1], that is 0 &le; x &le; 1.</b>
 
 ```js
 
