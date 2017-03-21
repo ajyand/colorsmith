@@ -28,10 +28,6 @@ The aim of the project is to help create variations of base color and to fully e
 
 ## Usage
 
-You can run test and see the test.html file produced in the 'test' folder.
-
-    $ npm test
-
 Import the library in your code and you can do basic transformations
 
 ```js
@@ -61,7 +57,11 @@ hexCode == color // false, we changed chroma to yellow tint
 
 Here's the summary of all available functions:
 
+<b>NOTE: All values are in the range [0,1], that is 0 &lt;= x &lt;= 1.</b>
+
 ```js
+
+
 [ chroma, complexion, coloration ] = Cs.hex2ccc( '#e48c15' )
 hexCode = Cs.ccc2hex( [ chroma, complexion, coloration ] )
 
@@ -82,7 +82,10 @@ complexion = Cs.fromSurfaceComplexion( chroma, surfComplexion )
 
 ```
 
-Here is the complete program that produces an output similar to the image above.
+Here is the complete program that produces an output similar to the image above. You can run test and see the test.html file produced in the 'test' folder.
+
+    $ npm test
+
 
 ```js
 
